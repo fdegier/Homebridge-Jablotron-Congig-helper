@@ -12,4 +12,4 @@ EXPOSE 8080
 ARG API_VERSION="dev"
 ENV API_VERSION=$API_VERSION
 
-CMD uvicorn app:app --no-access-log --host 0.0.0.0 --port $PORT
+CMD uvicorn app:app --host 0.0.0.0 --port $PORT

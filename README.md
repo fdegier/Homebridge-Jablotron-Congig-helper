@@ -2,12 +2,16 @@
 Just a simple Swagger hosted on Heroku to help people get the config for their Homebridge Jablotron setup.
 
 ## How to use
-1. Open https://jablotron-config-helper-api.herokuapp.com/docs
-2. Click on `try out`
-3. Enter email and password for Jablonet
-4. Click `execute`
-5. Be patient, it can take ~10 seconds
-6. Scroll down and copy the parts needed for your config
+1. Open the terminal and make sure you are in the repo
+2. Make sure Docker is running
+3. run `docker build . -t jablotron-config`
+4. run `docker run -p 8080:8080 -e PORT=8080 jablotron-config`
+5. Open http://0.0.0.0:8080
+6. Click on `try out`
+7. Enter email and password for Jablonet
+8. Click `execute`
+9. Be patient, it can take ~10 seconds
+10. Scroll down and copy the parts needed for your config
 
 ## Gotchas
 If you get an error, please make sure:
@@ -15,10 +19,3 @@ If you get an error, please make sure:
 2. Accept the terms of Jablotron, make sure you at least logged in once with the used credentials
 
 For the associated plugin see: https://github.com/fdegier/homebridge-jablotron-alarm
-
-### Privacy concerns
-Ofcourse there is the concern of sending your password over the internet, so preferably you would use the local nodejs 
-config helper. To mitigate the concern:
-- access logging has been turned off
-- passwords are never stored or logged
-- code is open source

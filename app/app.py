@@ -30,7 +30,7 @@ async def generate_config(username, password):
         raise HTTPException(status_code=404, detail="User not found, probably incorrect credentials")
     except Exception as E:
         logger.error(f"{_uuid}, error: {str(E)}")
-        raise HTTPException(status_code=500, detail=f"Something went wrong, please report UUID: {_uuid}")
+        raise HTTPException(status_code=500, detail=f"Something went wrong")
 
 
 @app.get("/", include_in_schema=False)
